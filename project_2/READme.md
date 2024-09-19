@@ -15,8 +15,8 @@ This project involves building a real-time data processing pipeline using Apache
 
 ## Execution and Reporting
 - The project includes Vagrant, Docker, and various scripts to facilitate execution.
-- Import files
+- Script & Files:
   1. [Python and PySpark scripts](https://github.com/Dimitris-STAT/Large_Scale_Data_Management/tree/main/project_2/python_files).
   2. [Cassandra data model details](https://github.com/Dimitris-STAT/Large_Scale_Data_Management/tree/main/project_2/cassandra_files).
   3. [Sample persisted data (around 50 rows)](https://github.com/Dimitris-STAT/Large_Scale_Data_Management/tree/main/project_2/cassandra_files).
-  4. Two CQL queries retrieving song names and average danceability for a specific person and hour.
+  4. [Two CQL queries retrieving song names and average danceability for a specific person and hour](https://github.com/Dimitris-STAT/Large_Scale_Data_Management/tree/main/project_2/cassandra_files).
