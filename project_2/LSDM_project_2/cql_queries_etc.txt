@@ -1,0 +1,40 @@
+///////////////////////////////// FIRST QUERY ///////////////////////////////////////////////////////////////////////////////////////////////////////
+SELECT person_name,  AVG(danceability) AS avg_danceability
+FROM spotify.music_listening
+WHERE person_name = 'Dimitris Stathopoulos'
+AND time_listened >= '2024-03-05 09:00:00'
+AND time_listened < '2024-03-05 10:00:00';
+
+/////////////////////////////RESULT////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ person_name           | avg_danceability
+-----------------------+------------------
+ Dimitris Stathopoulos |         0.654989
+
+
+
+
+//////////////////////////////// SECOND QUERY ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+SELECT song as songs_listened
+FROM spotify.music_listening
+WHERE person_name = 'Dimitris Stathopoulos'
+AND time_listened >= '2024-03-05 09:00:00'
+AND time_listened < '2024-03-05 10:00:00'
+LIMIT 10;
+
+/////////////////////////////RESULT////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ songs_listened
+----------------------------------
+ See You Again (feat. Kali Uchis)
+                        Idrogeios
+                          Khayaal
+                         Pirâmide
+       Chanel (feat. Eme Santana)
+                             FALA
+                        Bandidona
+                        Tid & Tro
+                            Kirja
+               sinust ei saa mind
+
+(10 rows)

@@ -1,0 +1,32 @@
+/////////////////////////////////////////////////////////////////// Cassandra Data Model ///////////////////////////////////////////////////////
+Cassandra data model contains SimpleStrategy, replication factor of 1, primary key being 'id', partition key being 'person_name' (spotify listener) and the clustering is ordered by(sorted) by 'time_listened' with desceding sorting.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////// CQL Queries for the data model creation //////////////////////////////////////////
+CREATE KEYSPACE IF NOT EXISTS spotify
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+
+
+CREATE TABLE IF NOT EXISTS spotify.music_listening (
+    id TEXT,
+    person_name TEXT,
+    song TEXT,
+    time_listened TIMESTAMP,
+    name TEXT,
+    artists TEXT,
+    duration_ms INT,
+    album_name TEXT,
+    album_release_date DATE,
+    danceability FLOAT,
+    energy FLOAT,
+    key INT,
+    loudness FLOAT,
+    mode INT,
+    speechiness FLOAT,
+    acousticness FLOAT,
+    instrumentalness FLOAT,
+    liveness FLOAT,
+    valence FLOAT,
+    tempo FLOAT,
+   PRIMARY KEY ((person_name), time_listened, id)
+) WITH CLUSTERING ORDER BY (time_listened DESC);
